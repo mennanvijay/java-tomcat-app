@@ -8,9 +8,13 @@
     <groupId>com.devops</groupId>
     <artifactId>java-tomcat-app</artifactId>
     <version>1.0</version>
-
-    <!-- IMPORTANT -->
     <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -21,5 +25,20 @@
         </dependency>
     </dependencies>
 
-</project>
+    <build>
+        <finalName>java-tomcat-app</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+            </plugin>
+        </plugins>
+    </build>
 
+</project>
